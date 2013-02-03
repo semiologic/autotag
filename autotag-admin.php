@@ -24,7 +24,7 @@ class autotag_admin {
 		
 		if ( !$published && !( $post_ID > 0 && get_post_meta($post_ID, '_did_autotag', true) ) ) {
 			if ( $post_ID > 0 && get_post_meta($post_ID, '_autotag', true)
-				|| $post_ID <= 0 && get_usermeta($user_ID, 'autotag')
+				|| $post_ID <= 0 && get_user_meta($user_ID, 'autotag', true)
 				) {
 				$default = 'publish';
 			} else {
@@ -75,7 +75,7 @@ class autotag_admin {
 		echo '<p>'
 			. '<label>'
 			. '<input type="checkbox" tabindex="4" name="autotag_strip"'
-				. ( get_usermeta($user_ID, 'autotag_strip')
+				. ( get_user_meta($user_ID, 'autotag_strip', true)
 					? ' checked="checked"'
 					: ''
 					)
@@ -147,7 +147,7 @@ class autotag_admin {
 				
 				if ( !empty($_POST['autotag_strip']) ) {
 					foreach ( $terms as $key => $term ) {
-						if ( !is_term($term, 'post_tag') )
+						if ( !term_exists($term, 'post_tag') )
 							unset($terms[$key]);
 					}
 				}
@@ -160,15 +160,15 @@ class autotag_admin {
 		
 		if ( !empty($_POST['autotag_sticky']) ) {
 			if ( $user_pref ) {
-				update_usermeta($user_ID, 'autotag', '1');
+				update_user_meta($user_ID, 'autotag', '1');
 			} else {
-				update_usermeta($user_ID, 'autotag', '0');
+				update_user_meta($user_ID, 'autotag', '0');
 			}
 			
 			if ( !empty($_POST['autotag_strip']) )
-				update_usermeta($user_ID, 'autotag_strip', '1');
+				update_user_meta($user_ID, 'autotag_strip', '1');
 			else
-				update_usermeta($user_ID, 'autotag_strip', '0');
+				update_user_meta($user_ID, 'autotag_strip', '0');
 		}
 	} # save_entry()
 } # autotag_admin
