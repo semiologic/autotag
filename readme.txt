@@ -1,9 +1,9 @@
 === Autotag ===
-Contributors: Denis-de-Bernardy
+Contributors: Denis-de-Bernardy, Mike_Koepke
 Donate link: http://www.semiologic.com/partners/
 Tags: semiologic
 Requires at least: 2.8
-Tested up to: 3.5
+Tested up to: 3.5.1
 Stable tag: trunk
 
 Leverages Yahoo's web services to automatically assign tags to your posts and pages
