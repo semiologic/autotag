@@ -6,14 +6,21 @@
  **/
 
 class autotag_admin {
-	/**
+    /**
+     * autotag_admin()
+     */
+    function autotag_admin() {
+        add_action('save_post', array($this, 'save_entry'));
+    } #autotag_admin
+
+    /**
 	 * entry_editor()
 	 *
 	 * @param $post
 	 * @return void
 	 **/
 
-	function entry_editor($post) {
+	static function entry_editor($post) {
 		global $user_ID;
 		$post_ID = $post->ID;
 		$published = $post->post_status == 'publish';
@@ -173,5 +180,6 @@ class autotag_admin {
 	} # save_entry()
 } # autotag_admin
 
-add_action('save_post', array('autotag_admin', 'save_entry'));
+$autotag_admin =  new autotag_admin();
+
 ?>

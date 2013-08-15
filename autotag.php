@@ -3,7 +3,7 @@
 Plugin Name: AutoTag
 Plugin URI: http://www.semiologic.com/software/autotag/
 Description: Leverages Yahoo!'s term extraction web service to automatically tag your posts.
-Version: 3.1
+Version: 3.2
 Author: Denis de Bernardy & Mike Koepke
 Author URI: http://www.getsemiologic.com
 Text Domain: autotag
@@ -30,7 +30,19 @@ load_plugin_textdomain('autotag', false, dirname(plugin_basename(__FILE__)) . '/
  **/
 
 class autotag {
-	/**
+    /**
+     * autotag()
+     */
+    function autotag() {
+        if ( is_admin() ) {
+        	if ( extension_loaded('simplexml') )
+        		add_action('admin_menu', array($this, 'meta_boxes'));
+        	else
+        		add_action('admin_notices', array($this, 'admin_notices'));
+        }
+    } #autotag
+
+    /**
 	 * meta_boxes()
 	 *
 	 * @return void
@@ -74,10 +86,5 @@ function load_yterms() {
 }
 endif;
 
-if ( is_admin() ) {
-	if ( extension_loaded('simplexml') )
-		add_action('admin_menu', array('autotag', 'meta_boxes'));
-	else
-		add_action('admin_notices', array('autotag', 'admin_notices'));
-}
+
 ?>
