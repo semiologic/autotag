@@ -6,22 +6,15 @@ Requires at least: 2.8
 Tested up to: 3.6
 Stable tag: trunk
 
-Leverages Yahoo's web services to automatically assign tags to your posts and pages
-
-
 == Description ==
 
-The autotag plugin for WordPress leverages Yahoo's web services to automatically assign tags to your posts and pages.
-
-To use it, activate and enjoy. A box will appear in your post editor. Things should be self-explanatory from there.
-
-Note that by default, WordPress provides no tag support for static pages. When using Semiologic Pro, you can tag pages when the Silo Web Design plugin is enabled.
-
-Also note that Yahoo's term extraction service will only serve individual IP addresses up to 5,000 times per 24-hours. If you're on a shared host or use this feature too often, you may end up with no additional tags. When this occurs, simply try again 24 hours later.
+No longer supported as Yahoo dropped support for its Terms Extraction service.
 
 = Help Me! =
 
-The [Semiologic forum](http://forum.semiologic.com) is the best place to report issues.
+The [Semiologic forum](http://forum.semiologic.com) is the best place to report issues. Please note, however, that while community members and I do our best to answer all queries, we're assisting you on a voluntary basis.
+
+If you require more dedicated assistance, consider using [Semiologic Pro](http://www.getsemiologic.com).
 
 
 == Installation ==
@@ -32,30 +25,6 @@ The [Semiologic forum](http://forum.semiologic.com) is the best place to report 
 
 == Change Log ==
 
-= 3.2 =
+= 3.2.2 =
 
-- WP 3.6 compat
-- PHP 5.4 compat
-
-= 3.1 =
-
-- WP 3.5 compat
-- Replace deprecated function calls
-
-= 3.0.3 =
-
-- WP 3.0.1 compat
-
-= 3.0.2 =
-
-- Avoid using broken WP functions
-
-= 3.0.1 =
-
-- Default tweak on first use
-
-= 3.0 =
-
-- Complete rewrite
-- Localization
-- Code enhancements and optimizations
+No longer supported
